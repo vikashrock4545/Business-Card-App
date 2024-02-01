@@ -16,7 +16,7 @@ function App() {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {cards.map((card) => (
-        <Card key = {card._id} style={{ flexBasis: "50%", boxSizing: "border-box" }}>
+        <Card key = {card._id} style={{ flexBasis: "50%", boxSizing: "border-box"}}>
           <h1>{card.name}</h1>
           <p>{card.description}</p>
           <b style={{fontSize: 20}}>Interests</b>
@@ -43,6 +43,7 @@ function Card({children}) {
         flexBasis: 'calc(50% - 20px)',
         boxSizing: 'border-box',
         backgroundColor: '#f0f8ff',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
       }}
   >
     {children}

@@ -7,6 +7,7 @@ function SocialButtons({ linkedinLink, twitterLink }) {
     color: 'white',
     textDecoration: 'none',
     display: 'inline-block',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
   };
 
   return (
