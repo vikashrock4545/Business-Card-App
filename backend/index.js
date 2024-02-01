@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { createAdmin, createCard } = require('./validation');
 const { admin, card } = require('./db');
 const { adminMiddleware } = require('./auth')
@@ -6,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json())
+app.use(cors())
 
 app.post('/signup', async (req, res) => {
     const username = req.body.username
@@ -42,7 +44,7 @@ app.post('/add-card', adminMiddleware, async (req, res) => {
     const interests = req.body.interests
     const linkedin = req.body.linkedin 
     const twitter = req.body.twitter
-
+    
     const response = createCard.safeParse({
         name,
         description,
@@ -50,13 +52,14 @@ app.post('/add-card', adminMiddleware, async (req, res) => {
         linkedin,
         twitter
     })
+    
     if(response.success) {
         await card.create({
-            name,
-            description,
-            interests,
-            linkedin,
-            twitter
+            name: response.data.name,
+            description: response.data.description,
+            linkedin: response.data.linkedin,
+            twitter: response.data.twitter,
+            interests: response.data.interests
         })
         res.json({
             message: "card created successfully"

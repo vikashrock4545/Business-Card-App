@@ -9,8 +9,8 @@ const cardSchema = mongoose.Schema({
     name: String,
     description: String,
     interests: [String],
-    tinkedIn: String,
-    Twitter: String
+    linkedin: String,
+    twitter: String
 })
 
 const adminSchema = mongoose.Schema({
