@@ -1,0 +1,17 @@
+.button-style {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #0077B5;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+  } */
