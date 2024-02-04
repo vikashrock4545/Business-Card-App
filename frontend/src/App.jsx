@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import SocialButtons from "./Socialbuttons"
+// import { Button } from "./Button"
+import './index.css'
 
 function App() {
   const [cards, setCards] = useState([])
@@ -29,6 +31,9 @@ function App() {
           />
         </Card>
       ))}
+      {/* TODO - make this button center */}
+      {/* Implement this button */}
+      {/* <Button heading="Add-Card" link="Auth-Page"></Button> */}
     </div>
   )
 }
